@@ -57,7 +57,6 @@ async function run() {
       comments.data.forEach(async comment => {
         const commentBody = comment.body
         const newCommentBody = commentBody.replaceAll(regexpFrom, replaceString)
-        console.log(commentBody)
         await octokit.request(`PATCH ${comment.url}`, {
           owner: repo_owner,
           repo: repo_name,
